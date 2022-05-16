@@ -12,8 +12,10 @@ class LanguageController extends Controller
         return view('lang');
     }
 
-    public function langChange(Request $request)
+    public function language(Request $request)
     {
-
+        App::setLocale($request->lang);
+        session()->put('locale', $request->lang);
+        return redirect()->back();
     }
 }

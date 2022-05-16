@@ -21,13 +21,13 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-3 col-md-offset-6 text-right">
-                            <strong>Select Language: </strong>
+                            <strong>{{__('messages.select')}} </strong>
                         </div>
                         <div class="col-md-9">
                             <select class="form-control changeLang">
-                                <option value="en">English</option>
-                                <option value="fa">فارسی</option>
-                                <option value="ar">العربیه</option>
+                                <option value="en" {{session()->get('locale') == 'en' ? 'selected':''}}>English</option>
+                                <option value="fa" {{session()->get('locale') == 'fa' ? 'selected':''}}>فارسی</option>
+                                <option value="ar" {{session()->get('locale') == 'ar' ? 'selected':''}}>العربیه</option>
                             </select>
                         </div>
                     </div>
@@ -38,7 +38,7 @@
     </div>
 </div>
 <script>
-    var url = "{{route('lan.change')}}"
+    var url = "{{route('lan.change')}}";
     $('.changeLang').change(function () {
         window.location.href = url + "?lang=" + $(this).val();
     });

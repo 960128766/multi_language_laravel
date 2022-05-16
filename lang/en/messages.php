@@ -1,4 +1,5 @@
 <?php
 return [
-    'title'=>'hello...welcome'
+    'title' => 'hello...welcome',
+    'select' => 'Select Language:'
 ];
